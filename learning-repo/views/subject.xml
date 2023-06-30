@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <!-- Запись представления дерева -->
+        <record model="ir.ui.view" id="subject_subname_tree_view">
+            <field name="name">subject.subname.tree</field>
+            <field name="model">subject.subname</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Определите поля, которые вы хотите отобразить в виде таблицы -->
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="is_done"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Запись представления формы -->
+        <record model="ir.ui.view" id="subject_subname_form_view">
+            <field name="name">subject.subname.form</field>
+            <field name="model">subject.subname</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- Определите поля, которые вы хотите отобразить на форме -->
+                    <div>
+                        <span>Name</span>
+                        <field name="name"/>
+                    </div>
+
+                    <h1>Value</h1>
+                    <field name="value"/>
+                    <h1>Is done?</h1>
+                    <field name="is_done"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Запись действия -->
+        <record model="ir.actions.act_window" id="subject_subname_action">
+            <field name="name">Access Subject</field>
+            <field name="res_model">subject.subname</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Запись элемента меню -->
+        <menuitem name="Subjects" id="menu_subject_subname" action="subject_subname_action" parent="menu_root"
+                  sequence="10"/>
+    </data>
+</odoo>
