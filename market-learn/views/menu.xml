@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <menuitem id="menu_products"
+              name="Products"
+              sequence="0"/>
+
+    <menuitem id="menu_sellers"
+              name="Sellers"
+              sequence="2"/>
+
+
+
+    <menuitem id="menu_selling_info"
+              parent="menu_products"
+              name="Selling Info"
+              sequence="1"/>
+</odoo>

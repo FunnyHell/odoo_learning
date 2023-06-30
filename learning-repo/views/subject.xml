@@ -42,7 +42,9 @@
         </record>
 
         <!-- Запись элемента меню -->
-        <menuitem name="Subjects" id="menu_subject_subname" action="subject_subname_action" parent="menu_root"
+        <menuitem name="Subjects"
+                  id="menu_subject_subname"
+                  action="subject_subname_action" parent="menu_root"
                   sequence="10"/>
     </data>
 </odoo>
