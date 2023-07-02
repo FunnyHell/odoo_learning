@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <record id="main_course" model="openacademy.course">
+            <field name="title">Main course</field>
+            <field name="description">Main odoo course</field>
+        </record>
+        <record id="sub_course" model="openacademy.course">
+            <field name="title">Sub course</field>
+            <field name="description">Sub odoo course</field>
+        </record>
+        <record id="course_base" model="openacademy.course">
+            <field name="title">Base course</field>
+            <field name="description">Base odoo course</field>
+        </record>
+
+    </data>
+
+</odoo>

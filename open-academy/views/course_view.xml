@@ -1,0 +1,32 @@
+<odoo>
+
+    <!--Tree|list view-->
+    <record id="openacademy_course_view_tree" model="ir.ui.view">
+        <field name="name">Open Academy tree</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <tree string="Course tree">
+                <field name="title"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--form view-->
+    <record id="openacademy_course_view_form" model="ir.ui.view">
+        <field name="name">Open Academy Course</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <form string="Course form">
+                <label for="title" string="Title"/>
+                <h1><field name="title"/></h1>
+
+                <notebook colspan="4">
+                    <page string="Description">
+                        <field name="description" placeholder="Description"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+</odoo>
