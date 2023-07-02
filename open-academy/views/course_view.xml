@@ -29,4 +29,16 @@
             </form>
         </field>
     </record>
+
+    <!--Search view-->
+    <record id="openacademy_course_view_search" model="ir.ui.view">
+        <field name="name">Courses Search</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
 </odoo>
