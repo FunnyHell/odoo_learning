@@ -1,0 +1,87 @@
+<odoo>
+
+    <!--Tree|list view-->
+    <record id="openacademy_session_view_tree" model="ir.ui.view">
+        <field name="name">Open Academy sessions tree</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <tree string="Session tree">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="number_of_seats"/>
+                <field name="number_of_taken_seats"/>
+                <field name="course_id"/>
+                <field name="instructor_id"/>
+                <field name="percentage_of_taken_seats" widget="progressbar"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="openacademy_session_view_calendar" model="ir.ui.view">
+        <field name="name">Open Academy session calendar</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Sessions" date_start="start_date" date_stop="finish_date"
+                      color="course_id" mode="month">
+                <field name="name"/>
+                <field name="instructor_id"/>
+                <field name="course_id"/>
+                <field name="percentage_of_taken_seats" widget="progressbar"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="openacademy_session_view_gantt" model="ir.ui.view">
+        <field name="name">Open Academy session gantt</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <gantt string="Session Gantt" date_start="start_date" date_stop="finish_date"
+                   default_group_by="instructor_id">
+            </gantt>
+        </field>
+    </record>
+
+    <record id="openacademy_session_view_graph" model="ir.ui.view">
+        <field name="name">Open Academy session graph</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <graph string="Number of attendees">
+                <field name="course_id"/>
+                <field name="number_of_taken_seats" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--form view-->
+    <record id="openacademy_session_view_form" model="ir.ui.view">
+        <field name="name">Open Academy Session</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <form string="Session form">
+                <sheet>
+                    <group>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <label for="name" string="Title"/>
+                        <field name="start_date"/>
+                        <field name="duration"/>
+                        <field name="is_active"/>
+                        <field name="number_of_seats"/>
+                        <field name="course_id"/>
+                        <field name="instructor_id"/>
+                        <field name="attendees_ids"/>
+                        <field name="percentage_of_taken_seats" widget="progressbar"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="openacademy_session_action" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">openacademy.session</field>
+        <field name="view_mode">tree,calendar,graph,gantt,form</field>
+    </record>
+</odoo>
