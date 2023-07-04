@@ -8,6 +8,7 @@
             <tree string="Course tree">
                 <field name="title"/>
                 <field name="description"/>
+                <field name="responsible_user_id"/>
             </tree>
         </field>
     </record>
@@ -24,6 +25,10 @@
                 <notebook colspan="4">
                     <page string="Description">
                         <field name="description" placeholder="Description"/>
+                        <field name="responsible_user_id"/>
+                    </page>
+                    <page string="Sessions">
+                        <field name="session_ids"/>
                     </page>
                 </notebook>
             </form>
@@ -40,5 +45,11 @@
                 <field name="description"/>
             </search>
         </field>
+    </record>
+
+    <record id="openacademy_course_action" model="ir.action.act_window">
+        <field name="name">Courses</field>
+        <field name="model">openacademy.course</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>
