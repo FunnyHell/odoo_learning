@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="openacademy_session_fill_wizard_view_form" model="ir.ui.view">
+        <field name="name">openacademy.session.fill.form</field>
+        <field name="model">openacademy.session.fill</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="session_ids"/>
+                    <field name="attendees_ids"/>
+                </group>
+                <group>
+                    <button name="action_fill_attendees" type="object" string="Submit"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="openacademy_session_fill_action" model="ir.actions.act_window">
+        <field name="name">Session fill wizard</field>
+        <field name="res_model">openacademy.session.fill</field>
+        <field name="view_mode">form</field>
+        <field name="target">New</field>
+        <field name="binding_model_id" ref="model_openacademy_session"/>
+    </record>
+</odoo>

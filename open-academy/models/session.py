@@ -1,5 +1,6 @@
 import datetime
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class Session(models.Model):
@@ -69,4 +70,14 @@ class Session(models.Model):
     @api.depends('number_of_taken_seats', 'number_of_seats')
     def _compute_percent_of_taken_seats(self):
         for record in self:
-            record.percentage_of_taken_seats = record.number_of_taken_seats / record.number_of_seats * 100.0
+            if record.number_of_taken_seats == 0:
+                record.percentage_of_taken_seats = 0
+            else:
+                record.percentage_of_taken_seats = record.number_of_taken_seats / record.number_of_seats * 100.0
+
+    @api.constrains('instructor_id')
+    def _check_instructor(self):
+        for record in self:
+            if record.instructor_id not in record.attendees_ids:
+                raise ValidationError('Instructor %s is not present in the attendees of his/her own session', record.instructor_id.name)
+

@@ -10,3 +10,8 @@ class Course(models.Model):
 
     session_ids = fields.One2many(comodel_name='openacademy.session', string='Session', inverse_name='course_id')
     responsible_user_id = fields.Many2one(comodel_name='res.users', string='Responsible user')
+
+    _sql_constraints = [
+        ('unique_title', 'unique(title)', 'Course title already exist'),
+        ('check_difference', 'check(title != description)', 'Title and description must be different')
+    ]

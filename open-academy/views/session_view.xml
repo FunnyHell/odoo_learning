@@ -5,7 +5,8 @@
         <field name="name">Open Academy sessions tree</field>
         <field name="model">openacademy.session</field>
         <field name="arch" type="xml">
-            <tree string="Session tree">
+            <tree string="Session tree" decoration-info="lasting_date &gt; 0 and lasting_date &lt; 5"
+                  decoration-danger="lasting_date &gt; 15">
                 <field name="name"/>
                 <field name="start_date"/>
                 <field name="duration"/>
@@ -14,6 +15,7 @@
                 <field name="course_id"/>
                 <field name="instructor_id"/>
                 <field name="percentage_of_taken_seats" widget="progressbar"/>
+                <field name="lasting_date" invisible="True"/>
             </tree>
         </field>
     </record>
@@ -59,22 +61,18 @@
         <field name="model">openacademy.session</field>
         <field name="arch" type="xml">
             <form string="Session form">
-                <sheet>
-                    <group>
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                        <label for="name" string="Title"/>
-                        <field name="start_date"/>
-                        <field name="duration"/>
-                        <field name="is_active"/>
-                        <field name="number_of_seats"/>
-                        <field name="course_id"/>
-                        <field name="instructor_id"/>
-                        <field name="attendees_ids"/>
-                        <field name="percentage_of_taken_seats" widget="progressbar"/>
-                    </group>
-                </sheet>
+                <label for="name" string="Title"/>
+                <h1>
+                    <field name="name"/>
+                </h1>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="is_active"/>
+                <field name="number_of_seats"/>
+                <field name="course_id"/>
+                <field name="instructor_id"/>
+                <field name="attendees_ids"/>
+                <field name="percentage_of_taken_seats" widget="progressbar"/>
             </form>
         </field>
     </record>
