@@ -21,7 +21,7 @@
         <field name="name">Session fill wizard</field>
         <field name="res_model">openacademy.session.fill</field>
         <field name="view_mode">form</field>
-        <field name="target">New</field>
+        <field name="target">new</field>
         <field name="binding_model_id" ref="model_openacademy_session"/>
     </record>
 </odoo>

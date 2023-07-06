@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="openacademy_course_rule_responsible">
+    <record id="openacademy_course_rule_responsible" model="ir.rule">
         <field name="name">Restricts for responsible user</field>
         <field name="model_id" ref="model_openacademy_course"/>
-        <field name="domain_force">[('responsible_id','=','user.id')]</field>
+        <field name="domain_force">[('responsible_user_id','=','user.id')]</field>
         <field name="perm_write" eval="0"/>
         <field name="perm_unlink" eval="0"/>
-        <field name="groups" eval="[(4, ref('openacademy.openacademy_group_manager'))]"/>
+        <field name="groups" eval="[(4, ref('openacademy_group_manager'))]"/>
     </record>
-    <record id="openacademy_course_rule_all">
+    <record id="openacademy_course_rule_all" model="ir.rule">
         <field name="name">Allow modify without responsible user</field>
         <field name="model_id" ref="model_openacademy_course"/>
-        <field name="domain_force">[('responsible_id','=',False)]</field>
+        <field name="domain_force">[('responsible_user_id','=',False)]</field>
         <field name="perm_write" eval="1"/>
         <field name="perm_unlink" eval="1"/>
         <field name="perm_read" eval="1"/>
         <field name="perm_create" eval="1"/>
-        <field name="groups" eval="[(4, ref('openacademy.openacademy_group_manager'))]"/>
+        <field name="groups" eval="[(4, ref('openacademy_group_manager'))]"/>
     </record>
 </odoo>

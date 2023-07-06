@@ -8,6 +8,8 @@
         'security/ir.model.access.csv',
         'views/course_view.xml',
         'views/session_view.xml',
-        'views/menus.xml'
+        'views/menus.xml',
+        'wizard/session_fill_view.xml',
+        'report/session_report.xml'
     ]
 }
