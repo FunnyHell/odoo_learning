@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top menu item -->
+    <menuitem id="academy_menu_root" name="Academy"/>
+    <!-- menu categories -->
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="academy_menu_teachers" name="Teachers"
+              parent="academy_menu_root"
+              action="teachers_action"/>
+
+    <menuitem id="academy_menu_courses" name="Courses"
+              parent="academy_menu_root"
+              action="courses_action"/>
+</odoo>
