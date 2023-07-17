@@ -1,0 +1,32 @@
+<odoo>
+    <record model="ir.ui.view" id="seller_details_tree_view">
+        <field name="name">market.seller.tree</field>
+        <field name="model">market.seller</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="seller_details_form_view">
+        <field name="name">market.seller.form</field>
+        <field name="model">market.seller</field>
+        <field name="arch" type="xml">
+            <form>
+                <h1>Name</h1>
+                <field name="name"/>
+                <field name="gender" options="{'selection': [('male', 'Male'), ('female', 'Female')]}"/>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="market_seller_action">
+        <field name="name">Seller</field>
+        <field name="res_model">market.seller</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

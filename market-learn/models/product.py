@@ -9,4 +9,4 @@ class Product(models.Model):
     cost = fields.Integer(string='Cost')
     on_sale = fields.Boolean(string='On sale?')
     note = fields.Text(string='Description')
-    seller = fields.Many2one('market.seller', string='Seller')
+    seller_id = fields.Many2one(comodel_name='market.seller', inverse_name='product_ids', string='Seller')

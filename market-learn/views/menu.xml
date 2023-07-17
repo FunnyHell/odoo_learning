@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <menuitem id="menu_products"
-              name="Products"
+    <menuitem id="menu_market"
+              name="Market"
               sequence="0"/>
 
-    <menuitem id="menu_sellers"
-              name="Sellers"
-              sequence="2"/>
-
-
-
-    <menuitem id="menu_selling_info"
-              parent="menu_products"
-              name="Selling Info"
+    <menuitem id="menu_product_details"
+              action="market_product_action"
+              parent="menu_market"
+              name="Product list"
               sequence="1"/>
+
+    <menuitem id="menu_sellers"
+              action="market_seller_action"
+              parent="menu_market"
+              name="Sellers list"
+              sequence="2"/>
 </odoo>
