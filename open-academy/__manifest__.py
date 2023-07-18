@@ -10,6 +10,7 @@
         'views/session_view.xml',
         'views/menus.xml',
         'wizard/session_fill_view.xml',
-        'report/session_report.xml'
+        'report/session_report.xml',
+        'report/session_templates.xml',
     ]
 }

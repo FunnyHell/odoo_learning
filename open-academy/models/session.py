@@ -11,7 +11,7 @@ class Session(models.Model):
 
     start_date = fields.Date(string='Start', required=True, default=fields.Date.today())
     duration = fields.Integer(string='Duration')
-    lasting_date = fields.Date(compute='_compute_lasting_days')
+    lasting_date = fields.Integer(compute='_compute_lasting_days')
     is_active = fields.Boolean(string='Active', default=True)
     finish_date = fields.Date(string='Finish', compute='_compute_finish_date', store='True')
 
@@ -34,11 +34,11 @@ class Session(models.Model):
     @api.depends('start_date')
     def _compute_lasting_days(self):
         for records in self:
-            lasting_days = (fields.Date.today() - records.start_date).days
-            if lasting_days < 0:
-                records.lasting_days = 0
+            lasting_date = (fields.Date.today() - records.start_date).days
+            if lasting_date < 0:
+                records.lasting_date = 0
             else:
-                records.lasting_days = lasting_days
+                records.lasting_date = lasting_date
 
     @api.depends('start_date', 'duration')
     def _compute_finish_date(self):
