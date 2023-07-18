@@ -2,6 +2,9 @@
     'name': 'Open Academy',
     'author': 'Sergey Omelianenko',
     'summary': 'Odoo 15 learning module based on official documentation',
+
+    'depends': ['board'],
+
     'data': [
         'security/openacademy_groups.xml',
         'security/course_rules.xml',
@@ -12,5 +15,6 @@
         'wizard/session_fill_view.xml',
         'report/session_report.xml',
         'report/session_templates.xml',
+        'views/dashboard.xml',
     ]
 }
