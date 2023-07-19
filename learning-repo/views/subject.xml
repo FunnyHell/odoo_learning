@@ -1,4 +1,4 @@
-odoo>
+<odoo>
     <data>
         <!-- Запись представления дерева -->
         <record model="ir.ui.view" id="subject_subname_tree_view">
