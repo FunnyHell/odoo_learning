@@ -6,6 +6,8 @@
     'version': '15.0.0',
     'depends': ['website'],
     'data': [
+        'views/snippets/s_airproof_snippet.xml',
+        'views/snippets/options.xml',
         'views/website_templates.xml',
     ],
     'assets': {
@@ -19,5 +21,8 @@
             'website_airproof/static/src/scss/theme.scss',
             'website_airproof/static/src/js/theme.js',
         ],
+        'web.assets_backend': [
+            'website_airproof/static/src/snippets/js/s_airproof_snippet_option.js',
+        ]
     },
 }

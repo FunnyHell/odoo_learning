@@ -42,12 +42,15 @@
         </field>
     </record>
 
-
-    <template id="template_header_opt" inherit_id="website.snippet_options" name="Footer Template - Option">
-        <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
-            <we-button title="airproof"
-                       data-customize-website-views="website_airproof.footer"
-                       data-customize-website-variable="'airproof'"/>
+    <template id="custom_message" inherit_id="website.layout" name="Custom Header">
+        <!-- Add an element after the top menu  -->
+        <xpath expr="//div[@id='wrapwrap']/main" position="before">
+            <div class="container">
+                <div class="alert alert-info mt16" role="alert">
+                    <strong>Welcome</strong>
+                    in our website!
+                </div>
+            </div>
         </xpath>
     </template>
 
@@ -58,9 +61,9 @@
         <field name="inherit_id" ref="website.layout"/>
         <field name="mode">extension</field>
         <field name="arch" type="xml">
-            <xpath expr="//div[@id='footer']" position="replace">
+            <xpath expr="//footer" position="replace">
                 <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
-                    <!-- Content -->
+                    <h3>Good bye, world!</h3>
                 </div>
             </xpath>
         </field>

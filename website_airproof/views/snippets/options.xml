@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+                <div class="o_panel_body">
+                    <t t-snippet="website_airproof.s_airproof_snippet"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

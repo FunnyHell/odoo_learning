@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="s_airproof_snippet" name="Airproof snippet">
+        <section class="trending">
+            <div class="container">
+                <center>
+                    <b>
+                        <h1>First Snippet</h1>
+                    </b>
+                </center>
+            </div>
+        </section>
+    </template>
+
+</odoo>
