@@ -7,14 +7,14 @@
 
     'data': [
         'security/openacademy_groups.xml',
-        'security/course_rules.xml',
+        'security/openacademy_course_rules.xml',
         'security/ir.model.access.csv',
-        'views/course_view.xml',
-        'views/session_view.xml',
+        'views/openacademy_course_view.xml',
+        'views/openacademy_session_view.xml',
         'views/menus.xml',
         'wizard/session_fill_view.xml',
-        'report/session_report.xml',
-        'report/session_templates.xml',
+        'report/openacademy_session_report.xml',
+        'report/openacademy_session_templates.xml',
         'views/dashboard.xml',
     ]
 }
